@@ -1,21 +1,16 @@
 <h1 align="center">
-    SCHOOL MANAGEMENT SYSTEM
+    COLLEGE MANAGEMENT SYSTEM
 </h1>
 
 <h3 align="center">
-Streamline school management, class organization, and add students and faculty.<br>
+Streamline college management, class organization, and add students and faculty.<br>
 Seamlessly track attendance, assess performance, and provide feedback. <br>
 Access records, view marks, and communicate effortlessly.
 </h3>
 
-<br>
-[Youtube Video](https://youtu.be/ol650KwQkgY?si=rKcboqSv3n-e4UbC)
-<br><br>
-[LinkedIn](https://www.linkedin.com/in/yogndr/)
-
 # About
 
-The School Management System is a web-based application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. It aims to streamline school management, class organization, and facilitate communication between students, teachers, and administrators.
+The College Management System is a web-based application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. It aims to streamline college management, class organization, and facilitate communication between students, teachers, and administrators.
 
 ## Features
 
@@ -42,7 +37,7 @@ The School Management System is a web-based application built using the MERN (Mo
 # Installation
 
 ```sh
-git clone https://github.com/Yogndrr/MERN-School-Management-System.git
+git clone https://github.com/ayush-297/College-Project
 ```
 Open 2 terminals in separate windows/tabs.
 
@@ -57,7 +52,7 @@ Create a file called .env in the backend folder.
 Inside it write this :
 
 ```sh
-MONGO_URL = mongodb://127.0.0.1/school
+MONGO_URL = mongodb://127.0.0.1/college
 ```
 If you are using MongoDB Compass you can use this database link but if you are using MongoDB Atlas then instead of this link write your own database link.
 

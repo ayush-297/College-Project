@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const studentSchema = new mongoose.Schema({
     name: {
@@ -11,6 +12,10 @@ const studentSchema = new mongoose.Schema({
     },
     password: {
         type: String,
+        required: true
+    },
+    year:{
+        type: Number,
         required: true
     },
     sclassName: {
@@ -57,4 +62,5 @@ const studentSchema = new mongoose.Schema({
     }]
 });
 
-module.exports = mongoose.model("student", studentSchema);
+// module.exports = mongoose.model("student", studentSchema);
+export const Student = mongoose.model("student", studentSchema);

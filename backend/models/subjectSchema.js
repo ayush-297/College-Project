@@ -1,4 +1,5 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const subjectSchema = new mongoose.Schema({
     subName: {
@@ -28,4 +29,5 @@ const subjectSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-module.exports = mongoose.model("subject", subjectSchema);
+// module.exports = mongoose.model("subject", subjectSchema);
+export const Subject = mongoose.model("subject", subjectSchema);

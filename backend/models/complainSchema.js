@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const complainSchema = new mongoose.Schema({
     user: {
@@ -21,4 +22,5 @@ const complainSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model("complain", complainSchema);
+// module.exports = mongoose.model("complain", complainSchema);
+export const Complain = mongoose.model("complain", complainSchema);

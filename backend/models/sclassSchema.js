@@ -1,4 +1,5 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const sclassSchema = new mongoose.Schema({
     sclassName: {
@@ -11,5 +12,6 @@ const sclassSchema = new mongoose.Schema({
     },
 }, { timestamps: true });
 
-module.exports = mongoose.model("sclass", sclassSchema);
+// module.exports = mongoose.model("sclass", sclassSchema);
+export const Sclass = mongoose.model("sclass", sclassSchema);
 
