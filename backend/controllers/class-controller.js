@@ -1,9 +1,9 @@
-const Sclass = require('../models/sclassSchema.js');
-const Student = require('../models/studentSchema.js');
-const Subject = require('../models/subjectSchema.js');
-const Teacher = require('../models/teacherSchema.js');
+import {Sclass} from '../models/sclassSchema.js';
+import {Student} from '../models/studentSchema.js';
+import {Subject} from '../models/subjectSchema.js';
+import {Teacher} from '../models/teacherSchema.js';
 
-const sclassCreate = async (req, res) => {
+export const sclassCreate = async (req, res) => {
     try {
         const sclass = new Sclass({
             sclassName: req.body.sclassName,
@@ -27,11 +27,11 @@ const sclassCreate = async (req, res) => {
     }
 };
 
-const sclassList = async (req, res) => {
+export const sclassList = async (req, res) => {
     try {
-        let sclasses = await Sclass.find({ school: req.params.id })
+        let sclasses = await Sclass.find({ school: req.params.id });
         if (sclasses.length > 0) {
-            res.send(sclasses)
+            res.send(sclasses);
         } else {
             res.send({ message: "No sclasses found" });
         }
@@ -40,11 +40,11 @@ const sclassList = async (req, res) => {
     }
 };
 
-const getSclassDetail = async (req, res) => {
+export const getSclassDetail = async (req, res) => {
     try {
         let sclass = await Sclass.findById(req.params.id);
         if (sclass) {
-            sclass = await sclass.populate("school", "schoolName")
+            sclass = await sclass.populate("school", "schoolName");
             res.send(sclass);
         }
         else {
@@ -53,11 +53,11 @@ const getSclassDetail = async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-}
+};
 
-const getSclassStudents = async (req, res) => {
+export const getSclassStudents = async (req, res) => {
     try {
-        let students = await Student.find({ sclassName: req.params.id })
+        let students = await Student.find({ sclassName: req.params.id });
         if (students.length > 0) {
             let modifiedStudents = students.map((student) => {
                 return { ...student._doc, password: undefined };
@@ -69,9 +69,9 @@ const getSclassStudents = async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-}
+};
 
-const deleteSclass = async (req, res) => {
+export const deleteSclass = async (req, res) => {
     try {
         const deletedClass = await Sclass.findByIdAndDelete(req.params.id);
         if (!deletedClass) {
@@ -84,9 +84,9 @@ const deleteSclass = async (req, res) => {
     } catch (error) {
         res.status(500).json(error);
     }
-}
+};
 
-const deleteSclasses = async (req, res) => {
+export const deleteSclasses = async (req, res) => {
     try {
         const deletedClasses = await Sclass.deleteMany({ school: req.params.id });
         if (deletedClasses.deletedCount === 0) {
@@ -99,7 +99,4 @@ const deleteSclasses = async (req, res) => {
     } catch (error) {
         res.status(500).json(error);
     }
-}
-
-
-module.exports = { sclassCreate, sclassList, deleteSclass, deleteSclasses, getSclassDetail, getSclassStudents };
+};

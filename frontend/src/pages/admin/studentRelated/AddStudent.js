@@ -119,8 +119,9 @@ const AddStudent = ({ situation }) => {
             const studentFields = {
               name: student.name,
               rollNum: student.rollNum,
-              password: student.password,
+              password: `${student.name}${student.year}`,
               sclassName,
+              year:student.year,
               adminID,
               role: "Student",
               attendance,
